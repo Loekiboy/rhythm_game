@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://bum4kf3gvcm8w" path="res://thumb_follow.gd" id="3_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://b7kgkb3hi72ns" path="res://assets/images/thumb.svg" id="4_7jktm"]
 [ext_resource type="AudioStream" uid="uid://b2w07nyda2dgr" path="res://assets/sounds/Sweetie Girl_section.wav" id="4_ryrav"]
+[ext_resource type="Script" uid="uid://bxpgxt1hbqy78" path="res://area_2d.gd" id="5_7jktm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l74px"]
+radius = 23.021729
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l74px"]
+size = Vector2(1542, 209.30377)
 
 [node name="Node2D" type="Node2D" unique_id=837488170]
 
@@ -14,8 +21,19 @@ script = ExtResource("3_fc0e3")
 [node name="Sprite2D" type="Sprite2D" parent="thumb-follow" unique_id=32459817]
 texture = ExtResource("4_7jktm")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thumb-follow" unique_id=1131975609]
+shape = SubResource("CircleShape2D_l74px")
+
 [node name="IntroMusic" type="AudioStreamPlayer2D" parent="." unique_id=2129184112]
 stream = ExtResource("1_80nbo")
 
 [node name="MainMusic" type="AudioStreamPlayer2D" parent="." unique_id=1622863240]
 stream = ExtResource("4_ryrav")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=564779487]
+position = Vector2(875, 325)
+rotation = 0.7853982
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1367343969]
+shape = SubResource("RectangleShape2D_l74px")

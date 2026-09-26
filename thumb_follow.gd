@@ -1,7 +1,9 @@
 extends Area2D
 
-@export var left_x: float = 300.0
-@export var right_x: float = 900.0
+@export var left_x: float = 600.0
+@export var right_x: float = 1150.0
+@export var top_y: float = 150.0
+@export var bottom_y: float = 600.0
 @export var speed: float = 3
 @export var shape: float = 0.8
 @export var pause_duration: float = 0.12
@@ -22,6 +24,8 @@ func _process(delta):
 	
 	var mid = (left_x + right_x) * 0.5
 	var half = (right_x - left_x) * 0.5
+	var mid_y = (top_y + bottom_y) * 0.5
+	var half_y = (bottom_y - top_y) * 0.5
 	
 	if pause_timer > 0.0:
 		pause_timer -= delta
@@ -39,6 +43,7 @@ func _process(delta):
 		pause_timer = pause_duration
 
 	position.x = mid + s * half
+	position.y = mid_y + s * half_y * -1
 	
 func _on_intro_finished():
 	music_player_main.finished.connect(_on_main_finished)
