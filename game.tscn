@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://cq4r7am6jor71"]
 
+[ext_resource type="AudioStream" uid="uid://0ixqrsf1j3vt" path="res://assets/sounds/intro.wav" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bum4kf3gvcm8w" path="res://thumb_follow.gd" id="3_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://b7kgkb3hi72ns" path="res://assets/images/thumb.svg" id="4_7jktm"]
+[ext_resource type="AudioStream" uid="uid://b2w07nyda2dgr" path="res://assets/sounds/Sweetie Girl_section.wav" id="4_ryrav"]
+
 [node name="Node2D" type="Node2D" unique_id=837488170]
+
+[node name="thumb-follow" type="Area2D" parent="." unique_id=319807434]
+position = Vector2(443, 298)
+script = ExtResource("3_fc0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="thumb-follow" unique_id=32459817]
+texture = ExtResource("4_7jktm")
+
+[node name="IntroMusic" type="AudioStreamPlayer2D" parent="." unique_id=2129184112]
+stream = ExtResource("1_80nbo")
+
+[node name="MainMusic" type="AudioStreamPlayer2D" parent="." unique_id=1622863240]
+stream = ExtResource("4_ryrav")
